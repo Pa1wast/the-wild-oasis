@@ -21,8 +21,6 @@ function BookingTable() {
 					<div>Assignes</div>
 					<div>Dates</div>
 					<div>Status</div>
-					<div></div>
-					<div></div>
 				</Table.Header>
 
 				<Table.Body

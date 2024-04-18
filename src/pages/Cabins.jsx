@@ -8,8 +8,8 @@ function Cabins() {
 	return (
 		<>
 			<Row type="horizontal">
-				<Heading as="h1">All cabins</Heading>
-				<CabinTableOperations />
+				<Heading as="h1">All Branches</Heading>
+			
 			</Row>
 
 			<Row>

@@ -69,8 +69,8 @@ function BookingRow({
 
 	const statusToTagName = {
 		unconfirmed: 'blue',
-		'checked-in': 'green',
-		'checked-out': 'silver',
+		'checked-in': 'silver',
+		'checked-out': 'green',
 	};
 
 	return (
@@ -84,20 +84,16 @@ function BookingRow({
 
 			<Stacked>
 				<span>
-					{isToday(new Date(startDate))
-						? 'Today'
-						: formatDistanceFromNow(startDate)}{' '}
-					&rarr; {numNights} night stay
+					Start date
 				</span>
 				<span>
-					{format(new Date(startDate), 'MMM dd yyyy')} &mdash;{' '}
-					{format(new Date(endDate), 'MMM dd yyyy')}
+					End date
 				</span>
 			</Stacked>
 
-			<Tag type={statusToTagName[status]}>{status.replace('-', ' ')}</Tag>
+			<Tag type={statusToTagName[status]}>{status.replace('-', ' ').replace(/checked in/gmi,'Working on').replace(/checked out/gmi,'completed')}</Tag>
 
-			<Amount>{formatCurrency(totalPrice)}</Amount>
+			
 
 			<Modal>
 				<Menus.Menu>
@@ -109,16 +105,6 @@ function BookingRow({
 						>
 							See details
 						</Menus.Button>
-						{status === 'unconfirmed' && (
-							<Menus.Button
-								icon={<HiArrowDownOnSquare />}
-								onClick={() =>
-									navigate(`/checkin/${bookingId}`)
-								}
-							>
-								Check in
-							</Menus.Button>
-						)}
 						{status === 'checked-in' && (
 							<Menus.Button
 								icon={<HiArrowUpOnSquare />}
@@ -127,13 +113,13 @@ function BookingRow({
 								}}
 								disabled={isCheckingOut}
 							>
-								Check out
+								Mark as completed
 							</Menus.Button>
 						)}
 
 						<Modal.Open opens="delete">
 							<Menus.Button icon={<HiTrash />}>
-								Delete booking
+								Delete task
 							</Menus.Button>
 						</Modal.Open>
 					</Menus.List>

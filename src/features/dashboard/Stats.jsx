@@ -21,25 +21,25 @@ function Stats({ bookings, confirmedStays, numDays, cabinCount }) {
 	return (
 		<>
 			<Stat
-				title="Bookings"
+				title="Assignes"
 				color="blue"
 				icon={<HiOutlineBriefcase />}
 				value={numBookings}
 			/>
 			<Stat
-				title="Sales"
+				title="Income"
 				color="green"
 				icon={<HiOutlineBanknotes />}
 				value={formatCurrency(sales)}
 			/>
 			<Stat
-				title="CHeck ins"
+				title="Current Tasks"
 				color="indigo"
 				icon={<HiOutlineCalendarDays />}
 				value={checkins}
 			/>
 			<Stat
-				title="Occupancy rate"
+				title="Completed"
 				color="yellow"
 				icon={<HiOutlineChartBar />}
 				value={Math.round(occupation * 100) + '%'}

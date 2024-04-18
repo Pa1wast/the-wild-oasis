@@ -28,7 +28,7 @@ function UpdateSettingsForm() {
 
 	return (
 		<Form>
-			<FormRow label="Minimum nights/booking">
+			<FormRow label="Minimum number of members">
 				<Input
 					type="number"
 					id="min-nights"
@@ -38,7 +38,7 @@ function UpdateSettingsForm() {
 				/>
 			</FormRow>
 
-			<FormRow label="Maximum nights/booking">
+			<FormRow label="Maximum number of members">
 				<Input
 					type="number"
 					id="max-nights"
@@ -48,25 +48,7 @@ function UpdateSettingsForm() {
 				/>
 			</FormRow>
 
-			<FormRow label="Maximum guests/booking">
-				<Input
-					type="number"
-					id="max-guests"
-					defaultValue={maxGuestsPerBooking}
-					disabled={isUpdating}
-					onBlur={e => handleUpdate(e, 'maxGuestsPerBooking')}
-				/>
-			</FormRow>
-
-			<FormRow label="Breakfast price">
-				<Input
-					type="number"
-					id="breakfast-price"
-					defaultValue={breakfastPrice}
-					disabled={isUpdating}
-					onBlur={e => handleUpdate(e, 'breakfastPrice')}
-				/>
-			</FormRow>
+		
 		</Form>
 	);
 }
