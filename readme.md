@@ -6,4 +6,4 @@ Use these credentials to log in:
 email: test@gmail.com
 password: 12341234
 
-View website here: https://the-wild-oasis-a6kt.vercel.app/dashboard
+View website here: https://the-wild-oasis-a6kt.vercel.app
