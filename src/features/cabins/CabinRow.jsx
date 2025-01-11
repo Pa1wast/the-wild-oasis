@@ -29,6 +29,7 @@ const Img = styled.img`
 	object-fit: cover;
 	object-position: center;
 	transform: scale(1.5) translateX(-7px);
+	margin-left: 10px;
 `;
 
 const Cabin = styled.div`
@@ -76,7 +77,7 @@ function CabinRow({ cabin }) {
 
 	return (
 		<Table.Row>
-			<Img src={image} />
+			<Img src={image}  />
 			<Cabin>{name}</Cabin>
 			<div>Fits up to {maxCapacity} guests</div>
 			<Price>{formatCurrency(regularPrice)}</Price>
